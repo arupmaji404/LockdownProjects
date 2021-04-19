@@ -15,8 +15,7 @@ zipCode_input.grid(row = 1, column = 1, padx = 10, pady = 10)
 def clicked():
     global countryCode_input
     global zipCode_input
-    # api_requests = requests.get("http://api.openweathermap.org/data/2.5/weather?zip=713304,in&appid=b6972e10797e77dbb75970f690b01332")
-    api_requests = requests.get("http://api.openweathermap.org/data/2.5/weather?zip=" + zipCode_input.get() + "," + countryCode_input.get() + "&appid=b6972e10797e77dbb75970f690b01332")
+    api_requests = requests.get("http://api.openweathermap.org/data/2.5/weather?zip=" + zipCode_input.get() + "," + countryCode_input.get() + "&appid=__Tokenidhasbeenhiddenforsecuritypurposes__")
     api = json.loads(api_requests.content)
     i = 0
     status = Tk()
@@ -28,12 +27,5 @@ def clicked():
 
 Button(root, text = "Show Details", command = clicked).grid(row = 2, padx = 20, columnspan = 2)
 
-"""
-try:
-    api_requests = requests.get("api.openweathermap.org/data/2.5/weather?zip=713334,+91&appid=b6972e10797e77dbb75970f690b01332")
-    api = json.loads(api_requests.content)
-except Exception as e:
-    api = "Error"
-"""
 
 root.mainloop()    
